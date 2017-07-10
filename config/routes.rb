@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :posts, only: [:create, :destroy]
   get 'home/index'
 
   root 'home#index'
