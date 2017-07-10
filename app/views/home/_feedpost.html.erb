@@ -2,4 +2,16 @@
 <div>
 <%= post.content %><br>
 <%= User.find(post.user_id).email %> <br>
+<% time = post.timediff() %>
+<% if time[:type] == "seconds" %>
+  Just now
+<% else %>
+  <%= time[:diff] %>
+  <% if time[:diff] == 1 %>
+    <%= time[:type].slice(0,time[:type].length - 1) %>
+  <% else %>
+    <%= time[:type] %>
+  <% end %>
+  ago
+<% end %>
 <div>
