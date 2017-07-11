@@ -1,11 +1,6 @@
-<h3> Welcome <%= link_to current_user.email, url_for(action: 'profile', controller: 'home') %></h3>
-
-<%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
-<%= link_to 'Friends', url_for(action: 'friends', controller: 'home')%>
-<%= link_to 'Requests', url_for(action: 'requests', controller: 'home') %>
-<%= link_to 'Signout', destroy_user_session_path, method: :delete %>
+<section>
 <%= render 'postform' %>
-
 <% @feed.each do |post| %>
         <%= render 'feedpost', post: post %>
 <% end %>
+</section>

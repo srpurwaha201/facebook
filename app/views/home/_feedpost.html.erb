@@ -1,7 +1,10 @@
 
+<div class="post">
+<header>
+  <div class="user_email">
+<%= User.find(post.user_id).email %>
+</div>
 <div>
-<%= post.content %><br>
-<%= User.find(post.user_id).email %> <br>
 <% time = post.timediff() %>
 <% if time[:type] == "seconds" %>
   Just now
@@ -13,5 +16,8 @@
     <%= time[:type] %>
   <% end %>
   ago
-<% end %>
-<div>
+<% end %><br>
+</div>
+</header>
+<%= post.content %><br>
+</div>

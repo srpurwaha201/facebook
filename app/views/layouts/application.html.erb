@@ -7,7 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <% if current_user %>
 
+
+  <header id="panel">
+  <h3><%= link_to current_user.email, url_for(action: 'profile', controller: 'home') %></h3>
+  <actions>
+  <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
+  <%= link_to 'Friends', url_for(action: 'friends', controller: 'home')%>
+  <%= link_to 'Requests', url_for(action: 'requests', controller: 'home') %>
+  <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
+  </actions>
+
+
+</header>
+ <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
