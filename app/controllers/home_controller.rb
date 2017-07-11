@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @post = Post.new
     @feed = Post.all
   end
+
+  def users
+    @users = User.all
+  end
 end

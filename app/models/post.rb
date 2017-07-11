@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  validates :content, presence: true
 
   def timediff
     diff = (Time.now - self.updated_at).round()

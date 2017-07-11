@@ -1,0 +1,6 @@
+<%= link_to 'back', home_index_path %> 
+<% @users.each do |user| %>
+<div>
+  <%= user.email %>
+</div>
+<% end %>

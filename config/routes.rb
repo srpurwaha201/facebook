@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
   resources :posts, only: [:create, :destroy]
   get 'home/index'
 
   root 'home#index'
+
+  get 'users' => 'home#users'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
