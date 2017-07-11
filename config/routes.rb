@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'user/newRequest'
 
   post 'user/acceptRequest'
+  post 'user/declineRequest'
 
   get 'home/requests'
 

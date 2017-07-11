@@ -23,6 +23,11 @@ class UserController < ApplicationController
     FriendRequest.where(sender_id: friend_id, reciever_id: current_user.id)[0].delete
   end
 
+  def declineRequest
+    deleteRequest params[:friend2_id]
+    return redirect_to '/home/requests'
+  end
+
   # def isFriend(friend_id)
   #   return (Friend.where(friend1_id: friend_id, friend2_id: current_user.id).count + Friend.where(friend1_id: current_user.id, friend2_id: friend_id).count) > 0
   # end
