@@ -3,7 +3,12 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
   def index
     @post = Post.new
-    @feed = Post.all
+    @feed = []
+    Post.all.order("created_at DESC").each do |post|
+      if (current_user.isFriend? post.user_id) || (post.user_id == current_user.id)
+        @feed << post
+      end
+    end
   end
 
   def users
