@@ -1,5 +1,8 @@
+Welcome <%= current_user.email %>
+
 <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
 <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
+<%= link_to 'Requests', url_for(action: 'requests', controller: 'home') %>
 <%= render 'postform' %>
 
 <% @feed.each do |post| %>

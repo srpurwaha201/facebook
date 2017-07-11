@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   get 'users' => 'home#users'
 
+  post 'user/newRequest'
+
+  post 'user/acceptRequest'
+
+  get 'home/requests'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

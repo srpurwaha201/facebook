@@ -9,4 +9,8 @@ class HomeController < ApplicationController
   def users
     @users = User.all
   end
+
+  def requests
+    @requests = FriendRequest.where(reciever_id: current_user.id)
+  end
 end
