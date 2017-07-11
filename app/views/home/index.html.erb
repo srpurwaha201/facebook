@@ -7,5 +7,7 @@
 <%= render 'postform' %>
 
 <% @feed.each do |post| %>
-  <%= render 'feedpost', post: post %>
+  <% if current_user.isFriend? post.user_id%>
+        <%= render 'feedpost', post: post %>
+  <% end %>
 <% end %>
