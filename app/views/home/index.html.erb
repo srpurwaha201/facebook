@@ -1,4 +1,4 @@
-Welcome <%= current_user.email %>
+<h3> Welcome <%= link_to current_user.email, url_for(action: 'profile', controller: 'home') %></h3>
 
 <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
 <%= link_to 'Friends', url_for(action: 'friends', controller: 'home')%>

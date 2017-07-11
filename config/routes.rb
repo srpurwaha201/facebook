@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   get 'home/requests'
 
-  get 'firends' => 'home#friends'
+  get 'friends' => 'home#friends'
+  get 'profile' => 'home#profile'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

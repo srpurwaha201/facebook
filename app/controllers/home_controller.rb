@@ -25,4 +25,7 @@ class HomeController < ApplicationController
       end
     end
   end
+
+  def profile
+  end
 end
