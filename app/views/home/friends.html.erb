@@ -1,0 +1,7 @@
+<% @friends.each do |friend| %>
+<div>
+  <%= friend.email %>
+</div>
+<% end %>
+
+<%= link_to "back", url_for(action: 'index', controller: 'home') %>
