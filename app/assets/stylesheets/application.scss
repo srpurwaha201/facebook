@@ -22,8 +22,10 @@
 body{
   width: 100vw;
   margin: 0;
-  padding: 0;
   background-color:#fffde5;
+	section{
+		padding-top: 70px;
+	}
     header#panel{
       position: fixed;
       width: 100%;
@@ -33,13 +35,34 @@ body{
       align-items: center;
       background-color: #fff25e;
       h3{
-        margin-left: 10%;
+				a{
+					text-decoration: none;
+				}
+				a:hover{
+					color: black;
+				}
+        margin-left: 60%;
       }
       actions{
+				a{
+					text-decoration: none;
+				}
+				a:hover{
+					color: black;
+				}
         width: 15%;
         display: flex;
         justify-content: space-around;
         margin-right: 10%;
       }
+			a:hover{
+				background-color: transparent;
+			}
+			img#logo{
+				padding-top: 5px;
+				height: 30px;
+				width: 30px;
+				padding-left: 40px;
+			}
   }
 }

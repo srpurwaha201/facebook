@@ -8,9 +8,8 @@
 </head>
 <body>
     <% if current_user %>
-
-
   <header id="panel">
+    <a href="/"><img src="/logo.jpg", id="logo"> </a>
   <h3><%= link_to current_user.email, url_for(action: 'profile', controller: 'home') %></h3>
   <actions>
   <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
@@ -18,15 +17,13 @@
   <%= link_to 'Requests', url_for(action: 'requests', controller: 'home') %>
   <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
   </actions>
-
-
 </header>
  <% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-
+<section>
 <%= yield %>
-
+</section
 </body>
 </html>
