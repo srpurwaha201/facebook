@@ -8,14 +8,11 @@ class UserController < ApplicationController
   end
 
   def acceptRequest
-    if(!current_user.isFriend?(params[:friend2_id]))
-    # if(!isFriend(params[:friend2_id]))
-        @newFriends = Friend.new
-        @newFriends.friend1_id = current_user.id
-        @newFriends.friend2_id = params[:friend2_id]
-        @newFriends.save
-        deleteRequest params[:friend2_id]
-    end
+    @newFriends = Friend.new
+    @newFriends.friend1_id = current_user.id
+    @newFriends.friend2_id = params[:friend2_id]
+    @newFriends.save
+    deleteRequest params[:friend2_id]
     return redirect_to '/home/requests'
   end
 
