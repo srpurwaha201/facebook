@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     respond_to do |format|
       if @post.save
-        format.html { redirect_to '/', notice: 'Post was successfully created.' }
+        format.js {   }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render 'home/index' }

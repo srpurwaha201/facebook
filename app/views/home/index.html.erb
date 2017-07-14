@@ -1,4 +1,6 @@
 <%= render 'postform' %>
+<div id="posts">
 <% @feed.each do |post| %>
         <%= render 'feedpost', post: post %>
 <% end %>
+</div>

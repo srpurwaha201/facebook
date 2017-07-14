@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 section{
-  padding-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 70px;
   div.field{
     textarea#post_content{
       width: 715px;
@@ -14,6 +14,10 @@ section{
       padding: 10px;
     }
   }
+div#posts{
+display: flex;
+flex-direction: column;
+align-items: center;
 div.post{
   header{
     div.user_email{
@@ -31,9 +35,10 @@ div.post{
   display: block;
   margin-top: 50px;
   background-color: white;
-  width: 40%;
+width: 200%;
   padding: 10px;
   border: 1px solid #DFE0E4;
   border-radius: 2px;
+}
 }
 }
