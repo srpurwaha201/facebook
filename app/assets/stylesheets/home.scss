@@ -15,30 +15,60 @@ section{
     }
   }
 div#posts{
+font-size: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
 div.post{
   header{
-    div.user_email{
-      font-weight: bold;
-      font-size: 15px;
-      margin-bottom: 20px;
+    section.left{
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      align-items: center;
+      div.profile_picture{
+        img{
+          height: 40px;
+          width: 40px;
+          border-radius: 20px;
+        }
+      }
+      div.user_email{
+        font-weight: bold;
+        font-size: 15px;
+      }
     }
-    margin: 0;
+    section.right{
+      .time{
+        font-size: 10px;
+      }
+      padding: 0;
+    }
+
     padding: 0;
     display: flex;
     justify-content: space-between;
     background-color: white;
-
+    margin-bottom: 40px;
   }
   display: block;
   margin-top: 50px;
   background-color: white;
-width: 200%;
+  width: 200%;
   padding: 10px;
   border: 1px solid #DFE0E4;
   border-radius: 2px;
 }
 }
+}
+
+div#profile{
+  img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    border: 1px solid black;
+  }
 }

@@ -1,1 +1,18 @@
-<h3>Profile page</h3>
+<div id="profile">
+<% if current_user.profile_picture %>
+
+
+<img src="/uploads/<%= current_user.profile_picture %>" >
+
+<% end %>
+
+
+<%= form_tag url_for(controller: :home, action: :upload_image), multipart: true do %>
+
+
+<%= file_field_tag :image %>
+<br>
+<%= submit_tag %>
+
+<% end %>
+</div>
