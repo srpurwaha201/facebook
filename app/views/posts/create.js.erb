@@ -1,2 +1,3 @@
+<% @comment = Comment.new %>
 $('#posts').prepend("<%= escape_javascript (render 'home/feedpost', post: @post) %>");
 $('#post_content').val("");
