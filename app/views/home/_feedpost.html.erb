@@ -31,8 +31,14 @@
 </section>
 </header>
 <%= post.content %><br>
-<%= render 'comments/form', post: post %>
+<footer class="comments">
+  <div class="comment_form">
+      <%= render 'comments/form', post: post %>
+  </div>
+  <div classs="post_comments">
 <% post.comments.each do |comment| %>
     <%= render 'comments/show', comment: comment %><br>
 <% end %>
+</div>
+</footer>
 </div>
