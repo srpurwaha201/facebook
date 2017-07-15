@@ -17,4 +17,12 @@ class User < ActiveRecord::Base
   def isFriend? friend_id
     return (Friend.where(friend1_id: friend_id, friend2_id: self.id).count + Friend.where(friend1_id: self.id, friend2_id: friend_id).count) > 0
   end
+
+  def profile_pic_path
+    if self.profile_picture
+        return "/uploads/" + self.profile_picture
+    else
+        return "default_profile_image.png"
+    end
+  end
 end
