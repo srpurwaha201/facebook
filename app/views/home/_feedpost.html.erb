@@ -32,4 +32,7 @@
 </header>
 <%= post.content %><br>
 <%= render 'comments/form', post: post %>
+<% post.comments.each do |comment| %>
+    <%= render 'comments/show', comment: comment %><br>
+<% end %>
 </div>
