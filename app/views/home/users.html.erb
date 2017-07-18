@@ -1,7 +1,7 @@
 
 <% @users.each do |user| %>
 <div>
-  <%= user.email %>
+  <%= user.full_name %>
   <% if user.isFriendable?(current_user.id) %>
     <% if user.isFriend?(current_user.id) %>
       Friend

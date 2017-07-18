@@ -1,6 +1,6 @@
 <% @requests.each do |request| %>
 <div>
-  <%= User.find(request.sender_id).email %>
+  <%= User.find(request.sender_id).full_name %>
   <%= link_to "Accept", url_for(action: "acceptRequest", controller: "user", friend2_id: request.sender_id), method: :post %>
   <%= link_to "Decline", url_for(action: "declineRequest", controller: "user", friend2_id: request.sender_id), method: :post %>
 
