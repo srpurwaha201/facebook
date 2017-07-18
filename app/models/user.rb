@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, through: :posts, dependent: :destroy
 
+  def full_name
+    self.first_name + " " + self.last_name
+  end
   def isFriendable? currentuserid
     currentuserid != self.id
   end

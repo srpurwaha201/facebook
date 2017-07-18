@@ -18,7 +18,7 @@
       <img src="default_profile_image.png">
       <% end %>
     </div>
-  <span id="user_email"><%= link_to current_user.email, url_for(action: 'profile', controller: 'home') %></span>
+  <span id="user_email"><%= link_to current_user.full_name, url_for(action: 'profile', controller: 'home') %></span>
 </section>
   <actions>
   <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
