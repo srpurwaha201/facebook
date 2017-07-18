@@ -11,11 +11,11 @@ class HomeController < ApplicationController
   end
 
   def requests
-    @requests = FriendRequest.where(reciever_id: current_user.id)
+    @requests = current_user.requests
   end
 
   def friends
-
+    @friends = current_user.friends
   end
 
   def profile

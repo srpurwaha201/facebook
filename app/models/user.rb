@@ -52,4 +52,8 @@ class User < ActiveRecord::Base
     end
     return friends
   end
+
+  def requests
+    FriendRequest.where(reciever_id: self.id)
+  end
 end
