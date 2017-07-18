@@ -28,4 +28,28 @@ class User < ActiveRecord::Base
         return "default_profile_image.png"
     end
   end
+
+  def feed
+    feed = self.posts
+    friends = self.friends
+    friends.each do |friend|
+      feed = feed + friend.posts
+    end
+    feed = feed.sort_by { |obj| obj.updated_at }
+    feed.reverse!
+    return feed
+  end
+
+  def friends
+    friends = []
+    friend_mappings = Friend.where(friend1_id: self.id) + Friend.where(friend2_id: self.id)
+    friend_mappings.each do |friend_mapping|
+      if friend_mapping.friend1_id == self.id
+        friends << User.find(friend_mapping.friend2_id)
+      else
+        friends << User.find(friend_mapping.friend1_id)
+      end
+    end
+    return friends
+  end
 end
