@@ -24,8 +24,20 @@
   </actions>
 </header>
  <% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+ <% if notice %>
+   <script type="text/javascript">
+   	noty({text: '<%= notice %>', type: 'alert'});
+   </script>
+
+   <% end %>
+
+
+   <% if alert %>
+
+   <script type="text/javascript">
+   	noty({text: '<%= alert %>', type: 'error'});
+   </script>
+   <% end %>
 
 <section>
 <%= yield %>
