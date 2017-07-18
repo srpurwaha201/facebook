@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718132108) do
-
-  create_table "comments", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+ActiveRecord::Schema.define(version: 20170718134856) do
 
   create_table "commments", force: :cascade do |t|
     t.text     "content"
@@ -43,13 +32,6 @@ ActiveRecord::Schema.define(version: 20170718132108) do
   end
 
   create_table "friend_requests", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "reciever_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "friendrequests", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "reciever_id"
     t.datetime "created_at",  null: false
