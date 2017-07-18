@@ -3,11 +3,7 @@
 <header>
   <section class="left">
   <div class="profile_picture">
-  <% if post.user.profile_picture %>
-  <img src="/uploads/<%=post.user.profile_picture %>">
-  <% else %>
-  <img src="default_profile_image.png">
-  <% end %>
+    <img src=<%=post.user.profile_pic_path %>>
 </div>
   <div class="user_email">
 <%= post.user.full_name %>

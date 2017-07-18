@@ -12,11 +12,7 @@
     <a href="/"><img src="/logo.jpg", id="logo"></a>
     <section id="user_pannel">
       <div class="profile_picture">
-      <% if current_user.profile_picture %>
-      <img src="/uploads/<%=current_user.profile_picture %>">
-      <% else %>
-      <img src="default_profile_image.png">
-      <% end %>
+          <img src=<%=current_user.profile_pic_path %>>
     </div>
   <span id="user_email"><%= link_to current_user.full_name, url_for(action: 'profile', controller: 'home') %></span>
 </section>
