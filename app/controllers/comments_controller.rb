@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to :back, notice: 'Comment was successfully created.' }
+        format.js {  }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
