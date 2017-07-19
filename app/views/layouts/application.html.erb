@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Facebook</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Facebook</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
     <% if current_user %>
-  <header id="panel">
-    <a href="/"><img src="/logo.jpg", id="logo"></a>
-    <section id="user_pannel">
-      <div class="profile_picture">
+    <header id="panel">
+      <a href="/"><img src="/logo.png" , id="logo"></a>
+      <section id="user_pannel">
+        <div class="profile_picture">
           <img src=<%=current_user.profile_pic_path %>>
-    </div>
-  <span id="user_email"><%= link_to current_user.full_name, url_for(action: 'profile', controller: 'home') %></span>
-</section>
-  <actions>
-  <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
-  <%= link_to 'Friends', url_for(action: 'friends', controller: 'home')%>
-  <%= link_to 'Requests', url_for(action: 'requests', controller: 'home') %>
-  <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
-  </actions>
-</header>
- <% end %>
- <% if notice %>
-   <script type="text/javascript">
-   	noty({text: '<%= notice %>', type: 'alert'});
-   </script>
+        </div>
+        <span id="user_email"><%= link_to current_user.full_name, url_for(action: 'profile', controller: 'home') %></span>
+      </section>
+      <actions>
+        <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
+        <%= link_to 'Friends', url_for(action: 'friends', controller: 'home')%>
+        <%= link_to 'Requests', url_for(action: 'requests', controller: 'home') %>
+        <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
+      </actions>
+    </header>
+    <% end %>
+    <% if notice %>
+    <script type="text/javascript">
+      noty({text: '<%= notice %>', type: 'alert'});
+    </script>
 
-   <% end %>
+    <% end %>
 
+    <% if alert %>
 
-   <% if alert %>
+    <script type="text/javascript">
+      noty({text: '<%= alert %>', type: 'error'});
+    </script>
+    <% end %>
 
-   <script type="text/javascript">
-   	noty({text: '<%= alert %>', type: 'error'});
-   </script>
-   <% end %>
-
-<section>
-<%= yield %>
-</section
-</body>
-</html>
+    <section>
+      <%= yield %>
+    </section </body>
+  </html>

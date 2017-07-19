@@ -25,7 +25,8 @@ class User < ActiveRecord::Base
     if self.profile_picture
         return "/uploads/" + self.profile_picture
     else
-        return "default_profile_image.png"
+        # return "/assets/images/default_profile_image.png"
+        return ActionController::Base.helpers.asset_path("default_profile_image.png")
     end
   end
 

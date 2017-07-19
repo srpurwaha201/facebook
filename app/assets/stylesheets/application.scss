@@ -13,78 +13,95 @@
  *= require_tree .
  *= require_self
  */
-
 * {
 	padding: 0;
 	margin: 0;
 }
 
-div#devise_sign_in{
+div#devise_sign_in {
 	padding: 20px;
 	background-color: white;
-	box-shadow: 0px 0px 10px black;
+	box-shadow: 0 0 10px grey;
 }
 
-body{
-  width: 99vw;
-  margin: 0;
-  background-color:#fffde5;
-	section{
+body {
+	width: 99vw;
+	margin: 0;
+	background-color: #E9EBEE;
+
+	section {
 		padding-top: 70px;
 	}
-    header#panel{
-      position: fixed;
-      width: 100%;
-      height: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #fff25e;
-			section#user_pannel{
-				margin-left: 40%;
+
+	header#panel {
+		position: fixed;
+		width: 100%;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #3B5998;
+		opacity: 0.9;
+
+		section#user_pannel {
+			margin-left: 40%;
+			display: flex;
+			flex-direction: row;
+			padding: 0;
+
+			.profile_picture {
+				margin-right: 5px;
 				display: flex;
-				flex-direction: row;
-				padding: 0;
-				.profile_picture{
-					margin-right: 5px;
-					display: flex;
-					img{
-						height: 20px;
-						width: 20px;
-						border: 1px solid black;
-						border-radius: 10px;
-					}
+
+				img {
+					height: 20px;
+					width: 20px;
+					border: 1px solid black;
+					border-radius: 10px;
 				}
-				#user_email{
-					font-size: 15px;
-					a{
-						text-decoration: none;
-					}
-					a:hover{
-						color: black;
-					}
-	      }
 			}
-      actions{
-				a{
+
+			#user_email {
+				font-size: 15px;
+
+				a {
+					padding: 5px;
+					color: white;
 					text-decoration: none;
 				}
-				a:hover{
-					color: black;
+
+				a:hover {
+					background-color: #133a8c;
 				}
-        width: 15%;
-        display: flex;
-        justify-content: space-around;
-        margin-right: 10%;
-      }
-			a:hover{
-				background-color: transparent;
 			}
-			img#logo{
-				padding-top: 5px;
-				height: 30px;
-				width: 30px;
-				padding-left: 40px;
+		}
+
+		actions {
+			a {
+				padding: 5px;
+				color: white;
+				text-decoration: none;
 			}
-  }
+
+			a:hover {
+				background-color: #133a8c;
+
+			}
+			width: 15%;
+			display: flex;
+			justify-content: space-around;
+			margin-right: 10%;
+		}
+
+		a:hover {
+			background-color: transparent;
+		}
+
+		img#logo {
+			padding-top: 5px;
+			height: 30px;
+			width: 30px;
+			padding-left: 40px;
+		}
+	}
 }

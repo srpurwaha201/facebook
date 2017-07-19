@@ -10,7 +10,7 @@
     </section>
     <section class="right">
       <div class="time">
-        <%= distance_of_time_in_words(Time.now, post.created_at) %>
+        <%= time_ago_in_words(post.created_at) %>
         ago<br>
       </div>
     </section>
