@@ -17,10 +17,11 @@
   </header>
   <%= post.content %><br>
   <footer>
-  <div class="actions">
-    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-</footer>
+    <div class="actions">
+      <%= link_to 'Like', url_for(controller: 'likes', action: 'toggle_like', like_type: 'post', like_id: post.id ) %> <%= post.likes_count %>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </footer>
   <footer class="comments">
     <div class="comment_form">
       <%= render 'comments/form', post: post %>
