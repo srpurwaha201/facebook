@@ -16,6 +16,11 @@
     </section>
   </header>
   <%= post.content %><br>
+  <footer>
+  <div class="actions">
+    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</footer>
   <footer class="comments">
     <div class="comment_form">
       <%= render 'comments/form', post: post %>

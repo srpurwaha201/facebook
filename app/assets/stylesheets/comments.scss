@@ -1,6 +1,30 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.comment_footer{
-  font-size: 10px;
+
+div.post_comments{
+  div.individual_comment{
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 15px;
+    span.user_email{
+      font-weight: bold;
+    }
+    span.user_image{
+      margin-right: 10px;
+      img{
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+      }
+    }
+  }
+  .comment_footer{
+    width: 434px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    span.time{
+    }
+  }
 }

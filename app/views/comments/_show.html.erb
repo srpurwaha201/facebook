@@ -10,9 +10,12 @@
       <%= comment.content %>
     </span>
     <footer class="comment_footer">
-      <div class="time">
+      <span class="actions">
+        <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </span>
+      <span class="time">
         <%=time_ago_in_words(comment.created_at)%> ago
-      </div>
+      </span>
     </footer>
   </div>
 </div>
