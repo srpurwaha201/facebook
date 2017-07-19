@@ -1,12 +1,11 @@
 <div id="profile">
-<img src="/uploads/<%= current_user.profile_picture %>" >
+  <img src="/uploads/<%= current_user.profile_picture %>">
 
-<%= form_tag url_for(controller: :home, action: :upload_image), multipart: true do %>
+  <%= form_tag url_for(controller: :home, action: :upload_image), multipart: true do %>
 
+  <%= file_field_tag :image %>
+  <br>
+  <%= submit_tag %>
 
-<%= file_field_tag :image %>
-<br>
-<%= submit_tag %>
-
-<% end %>
+  <% end %>
 </div>

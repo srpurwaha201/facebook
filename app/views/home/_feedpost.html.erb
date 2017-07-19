@@ -1,28 +1,29 @@
 <div class="post">
-<header>
-  <section class="left">
-  <div class="profile_picture">
-    <img src=<%=post.user.profile_pic_path %>>
-</div>
-  <div class="user_email">
-<%= post.user.full_name %>
-</div>
-</section>
-<section class="right">
-<div class="time">
-  <%= distance_of_time_in_words(Time.now, post.created_at) %><br>
-</div>
-</section>
-</header>
-<%= post.content %><br>
-<footer class="comments">
-  <div class="comment_form">
+  <header>
+    <section class="left">
+      <div class="profile_picture">
+        <img src=<%=post.user.profile_pic_path %>>
+      </div>
+      <div class="user_email">
+        <%= post.user.full_name %>
+      </div>
+    </section>
+    <section class="right">
+      <div class="time">
+        <%= distance_of_time_in_words(Time.now, post.created_at) %>
+        ago<br>
+      </div>
+    </section>
+  </header>
+  <%= post.content %><br>
+  <footer class="comments">
+    <div class="comment_form">
       <%= render 'comments/form', post: post %>
-  </div>
-  <div class="post_comments" id="<%= post.id %>">
-<% post.comments.each do |comment| %>
-    <%= render 'comments/show', comment: comment %><br>
-<% end %>
-</div>
-</footer>
+    </div>
+    <div class="post_comments" id="<%= post.id %>">
+      <% post.comments.each do |comment| %>
+      <%= render 'comments/show', comment: comment %><br>
+      <% end %>
+    </div>
+  </footer>
 </div>
