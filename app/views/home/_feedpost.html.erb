@@ -10,18 +10,7 @@
 </section>
 <section class="right">
 <div class="time">
-<% time = post.timediff() %>
-<% if time[:type] == "seconds" %>
-  Just now
-<% else %>
-  <%= time[:diff] %>
-  <% if time[:diff] == 1 %>
-    <%= time[:type].slice(0,time[:type].length - 1) %>
-  <% else %>
-    <%= time[:type] %>
-  <% end %>
-  ago
-<% end %><br>
+  <%= distance_of_time_in_words(Time.now, post.created_at) %><br>
 </div>
 </section>
 </header>
