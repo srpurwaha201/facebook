@@ -18,7 +18,9 @@
   <%= post.content %><br>
   <footer>
     <div class="actions">
-      <%= link_to 'Like', url_for(controller: 'likes', action: 'toggle_like', like_type: 'post', like_id: post.id ) %> <%= post.likes_count %>
+      <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+      <%= link_to 'Like', url_for(controller: 'likes', action: 'toggle_like', like_type: 'post', like_id: post.id ) %>
+      <%= post.likes_count %>
       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </footer>
