@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" id="<%= post.id%>">
   <header>
     <section class="left">
       <div class="profile_picture">
@@ -27,7 +27,7 @@
       <% end %>
 
       <span class="post_likes_count" id="<%= post.id%>"><%= post.likes_count %></span>
-      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', post, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
     </div>
   </footer>
   <footer class="comments">

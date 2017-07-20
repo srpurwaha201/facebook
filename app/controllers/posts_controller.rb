@@ -24,9 +24,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post_id = @post.id
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to '/', notice: 'Comment was successfully destroyed.' }
+      format.js{  }
+      # format.js { post_id: post_id  }
+      # format.html { redirect_to '/', notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
