@@ -1,4 +1,4 @@
-<div class="individual_comment">
+<div class="individual_comment" id="<%= comment.id %>">
   <span class="user_image">
     <img src=<%=current_user.profile_pic_path() %>>
   </span>
@@ -11,7 +11,7 @@
     </span>
     <footer class="comment_footer">
       <span class="actions">
-        <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete', comment, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
       </span>
       <span class="time">
         <%=time_ago_in_words(comment.created_at)%> ago
