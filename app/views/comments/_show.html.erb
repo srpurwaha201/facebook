@@ -11,6 +11,14 @@
     </span>
     <footer class="comment_footer">
       <span class="actions">
+        <% if comment.is_liked? current_user.id%>
+          <i class="fa fa-thumbs-up fa-2x comment_unlike_button" id="<%= comment.id %>" aria-hidden="true"></i>
+          <i style="display: none;"class="fa fa-thumbs-o-up fa-2x comment_like_button", id="<%= comment.id %>"aria-hidden="true"></i>
+        <% else %>
+        <i style="display: none;"class="fa fa-thumbs-up fa-2x comment_unlike_button" id="<%= comment.id %>" aria-hidden="true"></i>
+          <i class="fa fa-thumbs-o-up fa-2x comment_like_button", id="<%= comment.id %>"aria-hidden="true"></i>
+        <% end %>
+        <span class="comment_likes_count" id="<%= comment.id%>"><%= comment.likes_count %></span>
         <%= link_to 'Delete', comment, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
       </span>
       <span class="time">

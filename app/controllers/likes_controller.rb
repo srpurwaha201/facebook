@@ -9,7 +9,7 @@ class LikesController < ApplicationController
       like = Like.create(like_id: like_id, like_type: like_type, user_id: current_user.id)
     end
     # if like_type == 'post'
-    return Post.find(like_id).likes_count
+    # return Post.find(like_id).likes_count
     #   respond_to do |format|
     #     format.js {  likes_count: likes_count}
     #   end
