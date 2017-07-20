@@ -4,6 +4,15 @@
 
 $(document).ready(function() {
   $("i.post_like_button").click(function() {
+    var me = $(this);
+
+
+    if ( me.data('requestRunning') ) {
+        return;
+    }
+
+    me.data('requestRunning', true);
+
     var post_id = this.id;
     $.ajax({
       url: '/likes/toggle_like',
@@ -14,6 +23,9 @@ $(document).ready(function() {
         $("i#"+post_id+".post_like_button").css("display", "none");
         $("i#"+post_id+".post_unlike_button").css("display", "");
       },
+      complete: function() {
+            me.data('requestRunning', false);
+        },
       data: {
         like_type: 'post',
         like_id: post_id,
@@ -22,6 +34,13 @@ $(document).ready(function() {
   });
 
   $("i.post_unlike_button").click(function() {
+    var me = $(this);
+    if ( me.data('requestRunning') ) {
+        return;
+    }
+
+    me.data('requestRunning', true);
+
     var post_id = this.id;
     $.ajax({
       url: '/likes/toggle_like',
@@ -32,6 +51,9 @@ $(document).ready(function() {
         $("i#"+post_id+".post_like_button").css("display", "");
         $("i#"+post_id+".post_unlike_button").css("display", "none");
       },
+      complete: function() {
+            me.data('requestRunning', false);
+        },
       data: {
         like_type: 'post',
         like_id: post_id,
