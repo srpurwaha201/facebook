@@ -10,4 +10,8 @@ class Post < ActiveRecord::Base
   def is_liked? id
     Like.where(like_type: 'post', like_id: self.id, user_id: id).count > 0
   end
+
+  def comments
+    Comment.where(post_id: self.id).order(created_at: :desc)
+  end
 end
