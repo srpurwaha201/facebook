@@ -17,10 +17,16 @@
   </header>
   <%= post.content %><br>
   <footer>
-    <div class="actions">
-      <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
-      <%= link_to 'Like', url_for(controller: 'likes', action: 'toggle_like', like_type: 'post', like_id: post.id ) %>
-      <%= post.likes_count %>
+    <div class="actions" id="<%= post.id %>">
+      <% if post.is_liked? current_user.id%>
+        <i class="fa fa-thumbs-up fa-2x post_unlike_button" id="<%= post.id %>" aria-hidden="true"></i>
+        <i style="display: none;"class="fa fa-thumbs-o-up fa-2x post_like_button", id="<%= post.id %>"aria-hidden="true"></i>
+      <% else %>
+      <i style="display: none;"class="fa fa-thumbs-up fa-2x post_unlike_button" id="<%= post.id %>" aria-hidden="true"></i>
+        <i class="fa fa-thumbs-o-up fa-2x post_like_button", id="<%= post.id %>"aria-hidden="true"></i>
+      <% end %>
+
+      <span class="post_likes_count" id="<%= post.id%>"><%= post.likes_count %></span>
       <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </footer>

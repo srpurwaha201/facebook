@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'likes/toggle_like'
+  post 'likes/toggle_like'
 
   resources :comments, only: [:create, :destroy]
   resources :posts, only: [:create, :destroy]
