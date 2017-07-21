@@ -67,6 +67,7 @@ div.post{
 
   }
   footer.comments{
+    display: none;
     div.field{
       textarea#comment_content{
         resize: none;
@@ -113,4 +114,8 @@ div#profile{
     border-radius: 100px;
     border: 1px solid black;
   }
+}
+
+div.comments_info{
+  cursor: pointer;
 }

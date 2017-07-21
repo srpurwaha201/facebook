@@ -1,2 +1,9 @@
 
 $("#<%=@comment_id%>.individual_comment").remove();
+var new_count = <%= @comment.post.comments.count%>
+if(parseInt(new_count) > 1){
+  $('div#<%=@comment.post.id%>.comments_info').html(new_count+' comments')
+}
+else {
+    $('div#<%=@comment.post.id%>.comments_info').html(new_count+' comment')
+}

@@ -3,6 +3,17 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
+
+  $(document).on("click", "div.comments_info", function(){
+    var post_id = this.id;
+    var display = $("footer#"+post_id+".comments").css("display");
+    if (display == "none"){
+      $("footer#"+post_id+".comments").show();
+    }
+    else {
+      $("footer#"+post_id+".comments").hide();
+    }
+  })
   $(document).on("click", "i.post_like_button",   function() {
       var me = $(this);
 

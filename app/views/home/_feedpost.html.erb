@@ -29,8 +29,16 @@
       <span class="post_likes_count" id="<%= post.id%>"><%= post.likes_count %></span>
       <%= link_to 'Delete', post, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
     </div>
+    <div class="comments_info" id="<%= post.id %>">
+      <%= post.comments.count%>
+      <% if post.comments.count > 1 %>
+        comments
+        <% else %>
+        comment
+        <% end %>
+    </div>
   </footer>
-  <footer class="comments">
+  <footer class="comments" id="<%= post.id %>">
     <div class="comment_form">
       <%= render 'comments/form', post: post %>
     </div>
