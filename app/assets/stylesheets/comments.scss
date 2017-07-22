@@ -4,7 +4,7 @@
 
 div.post_comments{
   div.individual_comment{
-    padding-bottom: 10px;
+    padding: 10px;
     display: flex;
     font-size: 15px;
     span.user_email{
@@ -16,6 +16,7 @@ div.post_comments{
         height: 30px;
         width: 30px;
         border-radius: 15px;
+        border: 1px solid gray;
       }
     }
   }
