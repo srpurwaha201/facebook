@@ -18,19 +18,12 @@
 	margin: 0;
 }
 
-div#devise_sign_in {
-	div#devise_sign_in_form{
-		display: flex;	
-		div.field{
-			display: flex;
-		}
-
+	div#devise_sign_in {
+		padding: 20px;
+		background-color: white;
+		box-shadow: 0 0 10px grey;
 	}
 
-	// padding: 20px;
-	// background-color: white;
-	// box-shadow: 0 0 10px grey;
-}
 
 body {
 	width: 99vw;
