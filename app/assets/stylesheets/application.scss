@@ -30,11 +30,10 @@
 			justify-content: space-around;
 			// justify-content: flex-end;
 			height: 90px;
-			background-color: #344C93;
+			background: linear-gradient(#4D68A2, #3B5998);
 			div#facebook_logo{
-				img{
-					height: 60px;
-				}
+				font-size: 40px;
+				font-weight: 900;
 			}
 			div#devise_sign_in_form{
 				div.field{
@@ -69,6 +68,7 @@ body {
 	}
 
 	header#panel {
+		font-weight: bolder;
 		position: fixed;
 		top: 0px;
 		width: 100%;
@@ -76,8 +76,8 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #344C93;
-		
+		background-color: #3B5998;
+
 
 		section#user_pannel {
 			margin-left: 40%;
