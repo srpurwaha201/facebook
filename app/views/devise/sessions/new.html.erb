@@ -31,10 +31,17 @@
 
  <!-- <%= render "devise/shared/links" %> -->
 </header>
+<div id="login_content">
 <section id="left">
   <div id="login_text">
   Facebook helps you connect and share with the people in your life.
 </div>
   <%= image_tag 'index_img.png' %>
 </section>
+<section id="right">
+  <div id="new_form_heading">Create an account</div>
+  <div id="new_form_heading_description">It's free and always will be.</div>
+  <%= render 'devise/registrations/new' %>
+</section>
+</div>
 </div>

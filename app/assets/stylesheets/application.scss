@@ -59,17 +59,58 @@ div#devise_sign_in {
 		// background-color: white;
 		// box-shadow: 0 0 10px grey;
 	}
-
-	section#left{
-		position: relative;
-		left: 260px;
-		div#login_text{
-			line-height: 30px;
-			color: #0E385F;
-			font-size: 20px;
-			font-weight: bold;
+	div#login_content{
+		display: flex;
+		justify-content: space-around;
+		section#left{
+			position: relative;
+			left: 70px;
+			div#login_text{
+				line-height: 30px;
+				color: #0E385F;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			width:500px;
 		}
-		width:500px;
+		section#right{
+			position: relative;
+			right:150px;
+			div#new_form_heading{
+				font-size: 40px;
+				font-weight: bolder;
+				margin-bottom: 20px;
+			}
+			div#new_form_heading_description{
+				font-size: 20px;
+				margin-bottom: 20px;
+			}
+			div#sign_up_form{
+				div#signup_form_name{
+					display: flex;
+					justify-content: space-between;
+				}
+				input{
+					font-size: 20px;
+					margin-bottom: 10px;
+					height: 30px;
+					width: 383px;
+				}
+				input#user_first_name {
+					width: 180px;
+				}
+				input#user_last_name{
+					width: 180px;
+				}
+				div.actions{
+					input{
+						width: 201px;
+						height: 40px;
+					}
+
+				}
+			}
+		}
 	}
 }
 
