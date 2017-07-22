@@ -1,5 +1,8 @@
 <div id="devise_sign_in">
-<!-- <h2>Log in</h2> -->
+  <header id="devise_sign_in">
+    <div id="facebook_logo">
+      <%= image_tag 'Facebook_full.jpg'%>
+    </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div id="devise_sign_in_form">
   <div class="field">
@@ -25,5 +28,6 @@
 </div>
 <% end %>
 
- <%= render "devise/shared/links" %>
+ <!-- <%= render "devise/shared/links" %> -->
+</header>
 </div>

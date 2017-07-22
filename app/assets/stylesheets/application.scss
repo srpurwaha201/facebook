@@ -18,11 +18,45 @@
 	margin: 0;
 }
 
-	div#devise_sign_in {
-		padding: 20px;
-		background-color: white;
-		box-shadow: 0 0 10px grey;
+	div#devise_sign_in{
+		position: absolute;
+		top: 0px;
+		height: 100%;
+		width: 100%;
+		header#devise_sign_in {
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			// justify-content: flex-end;
+			height: 90px;
+			background-color: #344C93;
+			div#facebook_logo{
+				img{
+					height: 60px;
+				}
+			}
+			div#devise_sign_in_form{
+				div.field{
+					margin-right: 20px;
+					input{
+						width: 150px;
+					}
+				}
+				div.actions{
+					position: relative;
+					top: 15px;
+				}
+				display: flex;
+			}
+
+				// background-color: white;
+				// box-shadow: 0 0 10px grey;
+		}
 	}
+
+
+
 
 
 body {
@@ -42,8 +76,8 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #3B5998;
-		opacity: 0.9;
+		background-color: #344C93;
+		
 
 		section#user_pannel {
 			margin-left: 40%;
