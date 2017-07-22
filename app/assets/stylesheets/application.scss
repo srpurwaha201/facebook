@@ -45,14 +45,29 @@ div#devise_sign_in {
 			div.field {
 				margin-right: 20px;
 
-				input {
+				input#user_email, input#user_password {
+					font-size: 13px;
+					height: 13px;
+					margin-top: 2px;
+					padding: 5px;
 					width: 150px;
+					border-radius: 0px;
+					border: 1px solid #1D2A5B;
 				}
+
 			}
 
 			div.actions {
+
 				position: relative;
-				top: 15px;
+				top: 20px;
+				input{
+					color: white;
+					background-color: #4267B2;
+					width: 48px;
+					border: 1px solid #29487D;
+					height: 24px;
+				}
 			}
 			display: flex;
 		}
