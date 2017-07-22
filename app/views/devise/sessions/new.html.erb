@@ -4,7 +4,6 @@
       facebook
       <!-- <%= image_tag 'Facebook_full.jpg'%> -->
     </div>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div id="devise_sign_in_form">
   <div class="field">
@@ -32,4 +31,10 @@
 
  <!-- <%= render "devise/shared/links" %> -->
 </header>
+<section id="left">
+  <div id="login_text">
+  Facebook helps you connect and share with the people in your life.
+</div>
+  <%= image_tag 'index_img.png' %>
+</section>
 </div>
