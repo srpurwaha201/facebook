@@ -7,101 +7,104 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
   padding-top: 70px;
 
-  div.field {
-    textarea#post_content {
-      width: 715px;
-      height: 110px;
-      resize: none;
-      padding: 10px;
-    }
-  }
-
-  div#posts {
-    font-size: 20px;
+  section#feed {
     display: flex;
     flex-direction: column;
     align-items: center;
+    div.field {
+      textarea#post_content {
+        width: 715px;
+        height: 110px;
+        resize: none;
+        padding: 10px;
+      }
+    }
 
-    div.post {
-      header {
-        section.left {
-          width: 40%;
-          display: flex;
-          flex-direction: row;
-          // justify-content: space-between;
-          padding: 0;
-          align-items: center;
+    div#posts {
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-          div.profile_picture {
-            img {
-              height: 40px;
-              width: 40px;
-              border-radius: 20px;
-              margin-right: 10px;
-              border: 1px solid gray;
+      div.post {
+        header {
+          section.left {
+            width: 40%;
+            display: flex;
+            flex-direction: row;
+            // justify-content: space-between;
+            padding: 0;
+            align-items: center;
+
+            div.profile_picture {
+              img {
+                height: 40px;
+                width: 40px;
+                border-radius: 20px;
+                margin-right: 10px;
+                border: 1px solid gray;
+              }
+            }
+
+            div.user_email {
+              font-weight: bold;
+              font-size: 15px;
             }
           }
 
-          div.user_email {
-            font-weight: bold;
-            font-size: 15px;
-          }
-        }
-
-        section.right {
-          .time {
-            font-size: 10px;
+          section.right {
+            .time {
+              font-size: 10px;
+            }
+            padding: 0;
           }
           padding: 0;
-        }
-        padding: 0;
-        display: flex;
-        justify-content: space-between;
-        background-color: white;
-        margin-bottom: 40px;
-      }
-
-      footer {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        font-size: 10px;
-
-        div.actions {
-          width: 100%;
-        }
-
-        div.comments_info {
           display: flex;
-          justify-content: flex-end;
-          width: 90px;
+          justify-content: space-between;
+          background-color: white;
+          margin-bottom: 40px;
         }
-      }
 
-      footer.comments {
-        display: none;
+        footer {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+          font-size: 10px;
 
-        div.field {
-          textarea#comment_content {
-            resize: none;
+          div.actions {
             width: 100%;
           }
+
+          div.comments_info {
+            display: flex;
+            justify-content: flex-end;
+            width: 90px;
+          }
         }
-        background-color: #f7f7f7;
+
+        footer.comments {
+          display: none;
+
+          div.field {
+            textarea#comment_content {
+              resize: none;
+              width: 100%;
+            }
+          }
+          background-color: #f7f7f7;
+          border: 1px solid #DFE0E4;
+        }
+        display: block;
+        margin-top: 50px;
+        background-color: white;
+        width: 500px;
+        padding: 10px;
         border: 1px solid #DFE0E4;
+        border-radius: 2px;
       }
-      display: block;
-      margin-top: 50px;
-      background-color: white;
-      width: 500px;
-      padding: 10px;
-      border: 1px solid #DFE0E4;
-      border-radius: 2px;
     }
   }
 }
@@ -116,4 +119,35 @@ div#profile {
 
 div.comments_info {
   cursor: pointer;
+}
+
+div.user_info {
+  border: 1px solid #DFE0E4;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 400px;
+  background-color: white;
+  height: 120px;
+
+  span.user_details {
+    height: auto;
+    display: flex;
+
+    img {
+      border: 1px solid #DFE0E4;
+      height: 120px;
+      margin-right: 10px;
+    }
+
+    span.user_name {
+      font-size: 20px;
+    }
+  }
+
+  form.button_to {
+    input {
+      cursor: pointer;
+    }
+  }
 }

@@ -1,6 +1,8 @@
 <% @friends.each do |friend| %>
-<div>
-  <%= friend.full_name %>
-  <%= link_to "Unfriend", url_for(action: 'unFriend', controller: 'user', friend_id: friend.id), method: :post %>
-</div>
+<div class="user_info" id="<%= friend.id %>">
+  <%= render 'user', user: friend%>
+  <span class="actions">
+    <%= button_to "Unfriend", url_for(action: 'unFriend', controller: 'user', friend_id: friend.id), method: :post %>
+</span>
+  </div>
 <% end %>

@@ -1,6 +1,8 @@
-<%= render 'posts/postform', post: @post %>
-<div id="posts">
-<% current_user.feed.each do |post| %>
-        <%= render 'feedpost', post: post %>
-<% end %>
-</div>
+<section id="feed">
+  <%= render 'posts/postform', post: @post %>
+  <div id="posts">
+    <% current_user.feed.each do |post| %>
+    <%= render 'feedpost', post: post %>
+    <% end %>
+  </div>
+</section>

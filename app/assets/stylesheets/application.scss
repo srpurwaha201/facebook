@@ -75,6 +75,7 @@ div#devise_sign_in {
 		// box-shadow: 0 0 10px grey;
 	}
 	div#login_content{
+		padding: 40px;
 		display: flex;
 		justify-content: space-around;
 		section#left{
@@ -90,7 +91,7 @@ div#devise_sign_in {
 		}
 		section#right{
 			position: relative;
-			right:150px;
+			right:100px;
 			div#new_form_heading{
 				font-size: 40px;
 				font-weight: bolder;
@@ -138,9 +139,9 @@ body {
 	margin: 0;
 	background-color: #E9EBEE;
 
-	section {
-		padding-top: 70px;
-	}
+	// section {
+	// 	padding-top: 70px;
+	// }
 
 	header#panel {
 		font-weight: bolder;
