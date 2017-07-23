@@ -121,33 +121,43 @@ div.comments_info {
   cursor: pointer;
 }
 
-div.user_info {
-  border: 1px solid #DFE0E4;
+div#friends{
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px;
-  width: 400px;
-  background-color: white;
-  height: 120px;
-
-  span.user_details {
-    height: auto;
+  width: 900px;
+  div.user_info {
+    margin-bottom: 50px;
+    border: 1px solid #DFE0E4;
     display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 400px;
+    background-color: white;
+    height: 120px;
 
-    img {
-      border: 1px solid #DFE0E4;
-      height: 120px;
-      margin-right: 10px;
+    span.user_details {
+      height: auto;
+      display: flex;
+
+      img {
+        border: 1px solid #DFE0E4;
+        height: 120px;
+        width: 120px;
+        margin-right: 10px;
+      }
+
+      span.user_name {
+        font-size: 20px;
+      }
     }
 
-    span.user_name {
-      font-size: 20px;
-    }
-  }
-
-  form.button_to {
-    input {
-      cursor: pointer;
+    form.button_to {
+      input {
+        cursor: pointer;
+      }
     }
   }
 }

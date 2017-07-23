@@ -1,3 +1,4 @@
+<div id="friends">
 <% @friends.each do |friend| %>
 <div class="user_info" id="<%= friend.id %>">
   <%= render 'user', user: friend%>
@@ -6,3 +7,4 @@
 </span>
   </div>
 <% end %>
+</div>
