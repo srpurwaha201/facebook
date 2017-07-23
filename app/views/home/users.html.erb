@@ -1,14 +1,17 @@
-<% @users.each do |user| %>
-<div>
-  <%= user.full_name %>
-  <% if user.isFriendable?(current_user.id) %>
-  <% if user.isFriend?(current_user.id) %>
-  Friend
-  <% elsif user.requestSent?(current_user.id) %>
-  Friend Request Sent
-<% else %>
-  <%= link_to 'Send Request', url_for(action: "newRequest", controller: "user",reciever_id: user.id), method: :post  %>
-  <% end %>
-  <% end %>
-</div>
+<div id="users">
+  <% @users.each do |user| %>
+  <div class="user_info" id="<%= user.id %>">
+    <%= render 'user', user: user%>
+    <% if user.isFriendable?(current_user.id) %>
+    <% if user.isFriend?(current_user.id) %>
+    Friend
+    <% elsif user.requestSent?(current_user.id) %>
+    Friend Request Sent
+  <% else %>
+    <%= button_to 'Send Request', url_for(action: "newRequest", controller: "user",reciever_id: user.id), method: :post  %>
+    <% end %>
+    <% end %>
+  </div>
+
 <% end %>
+</div>
