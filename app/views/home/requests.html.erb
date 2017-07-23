@@ -1,7 +1,11 @@
+<div id="requests">
 <% @requests.each do |request| %>
-<div>
-  <%= User.find(request.sender_id).full_name %>
-  <%= link_to "Accept", url_for(action: "acceptRequest", controller: "user", friend2_id: request.sender_id), method: :post %>
-  <%= link_to "Decline", url_for(action: "declineRequest", controller: "user", friend2_id: request.sender_id), method: :post %>
-</div>
+<div class="user_info" id="<%= request.sender.id %>">
+  <%= render 'user', user: request.sender %>
+  <span class="actions">
+  <%= button_to "Accept", url_for(action: "acceptRequest", controller: "user", friend2_id: request.sender_id), method: :post %>
+  <%= button_to "Decline", url_for(action: "declineRequest", controller: "user", friend2_id: request.sender_id), method: :post %>
+</span>
+  </div>
 <% end %>
+</div>
