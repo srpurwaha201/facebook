@@ -15,7 +15,7 @@
         <div class="profile_picture">
           <img src=<%=current_user.profile_pic_path %>>
         </div>
-        <span id="user_email"><%= link_to current_user.full_name, url_for(action: 'profile', controller: 'home') %></span>
+        <span id="user_name"><%= link_to current_user.first_name, url_for(action: 'profile', controller: 'home') %></span>
       </section>
       <actions>
         <%= link_to 'Users', url_for(action: 'users', controller: 'home') %>
