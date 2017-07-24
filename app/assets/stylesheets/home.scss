@@ -55,18 +55,20 @@ body {
                 border: 1px solid #DFE0E4;
               }
             }
-
-            div.user_email {
-              font-weight: bold;
-              font-size: 15px;
+            div.post_details{
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              div.user_name {
+                font-weight: bold;
+                font-size: 15px;
+              }
+              div.time {
+                font-size: 10px;
+                color: #9DA4D0;
+              }
             }
-          }
 
-          section.right {
-            .time {
-              font-size: 10px;
-            }
-            padding: 0;
           }
           padding: 0;
           display: flex;

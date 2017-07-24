@@ -4,14 +4,14 @@
       <div class="profile_picture">
         <img src=<%=post.user.profile_pic_path %>>
       </div>
-      <div class="user_email">
-        <%= post.user.full_name %>
-      </div>
-    </section>
-    <section class="right">
-      <div class="time">
-        <%= time_ago_in_words(post.created_at) %>
-        ago<br>
+      <div class="post_details">
+        <div class="user_name">
+          <%= post.user.full_name %>
+        </div>
+        <div class="time">
+          <%= time_ago_in_words(post.created_at) %>
+          ago<br>
+        </div>
       </div>
     </section>
   </header>
@@ -19,11 +19,11 @@
   <footer>
     <div class="actions" id="<%= post.id %>">
       <% if post.is_liked? current_user.id%>
-        <i class="fa fa-thumbs-up fa-2x post_unlike_button" id="<%= post.id %>" aria-hidden="true"></i>
-        <i style="display: none;"class="fa fa-thumbs-o-up fa-2x post_like_button", id="<%= post.id %>"aria-hidden="true"></i>
-      <% else %>
-      <i style="display: none;"class="fa fa-thumbs-up fa-2x post_unlike_button" id="<%= post.id %>" aria-hidden="true"></i>
-        <i class="fa fa-thumbs-o-up fa-2x post_like_button", id="<%= post.id %>"aria-hidden="true"></i>
+      <i class="fa fa-thumbs-up fa-2x post_unlike_button" id="<%= post.id %>" aria-hidden="true"></i>
+      <i style="display: none;" class="fa fa-thumbs-o-up fa-2x post_like_button" , id="<%= post.id %>" aria-hidden="true"></i>
+    <% else %>
+      <i style="display: none;" class="fa fa-thumbs-up fa-2x post_unlike_button" id="<%= post.id %>" aria-hidden="true"></i>
+      <i class="fa fa-thumbs-o-up fa-2x post_like_button" , id="<%= post.id %>" aria-hidden="true"></i>
       <% end %>
 
       <span class="post_likes_count" id="<%= post.id%>"><%= post.likes_count %></span>
@@ -32,10 +32,10 @@
     <div class="comments_info" id="<%= post.id %>">
       <%= post.comments.count%>
       <% if post.comments.count > 1 %>
-        comments
-        <% else %>
-        comment
-        <% end %>
+      comments
+    <% else %>
+      comment
+      <% end %>
     </div>
   </footer>
   <footer class="comments" id="<%= post.id %>">
