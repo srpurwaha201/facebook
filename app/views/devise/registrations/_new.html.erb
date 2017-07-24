@@ -31,7 +31,12 @@
     <!-- <%= f.label :password_confirmation %><br /> -->
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password' %>
   </div>
-
+  <div class="field">
+      <%= f.label :Birthday %><br>
+      <div id="date_select">
+      <%= f.date_select :birthday, {order: [:day, :month, :year],start_year: Date.today.year - 18, end_year: Date.today.year - 100},{required: true} %>
+    </div>
+    </div>
   <div class="actions">
     <%= f.submit "Create an account" %>
   </div>

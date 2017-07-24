@@ -58,10 +58,10 @@ div#devise_sign_in {
 			}
 
 			div.actions {
-
 				position: relative;
 				top: 20px;
 				input{
+					margin: 0;
 					color: white;
 					background-color: #4267B2;
 					width: 48px;
@@ -106,6 +106,9 @@ div#devise_sign_in {
 					display: flex;
 					justify-content: space-between;
 				}
+				label{
+					font-size: 18px;
+				}
 				input{
 					font-size: 20px;
 					margin-bottom: 10px;
@@ -118,7 +121,11 @@ div#devise_sign_in {
 				input#user_last_name{
 					width: 180px;
 				}
+				div#date_select{
+					margin-top: 10px;
+				}
 				div.actions{
+					margin-top: 20px;
 					input{
 						background-color: #5B9047;
 						color: white;
