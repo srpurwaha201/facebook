@@ -11,7 +11,8 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.text_area :content %>
+    <%= image_tag current_user.profile_pic_path %>
+    <%= f.text_area :content, placeholder: 'Hi ' + user_name + ". Tell your friends about your day."%>
   </div>
   <div class="actions">
     <%= f.submit %>

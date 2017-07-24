@@ -15,14 +15,21 @@ body {
     flex-direction: column;
     align-items: center;
     div.field {
+      img{
+        background-color: white;
+        height: 66px;
+        width: 66px;
+        border: 1px solid #BBB7B3;
+      }
       textarea#post_content {
-        width: 715px;
-        height: 110px;
+        width: 426px;
+        height: 49px;
         resize: none;
         padding: 10px;
+        font-family: inherit; 
       }
-    }
 
+    }
     div#posts {
       font-size: 20px;
       display: flex;

@@ -1,5 +1,5 @@
 <section id="feed">
-  <%= render 'posts/postform', post: @post %>
+  <%= render 'posts/postform', post: @post, user_name: current_user.first_name %>
   <div id="posts">
     <% current_user.feed.each do |post| %>
     <%= render 'feedpost', post: post %>
