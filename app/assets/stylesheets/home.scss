@@ -14,22 +14,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    div.field {
-      img{
-        background-color: white;
-        height: 66px;
-        width: 66px;
-        border: 1px solid #BBB7B3;
-      }
-      textarea#post_content {
-        width: 426px;
-        height: 49px;
-        resize: none;
-        padding: 10px;
-        font-family: inherit;
-      }
+    form.new_post{
+      margin-bottom: 10px;
+      div.field {
+        img{
+          background-color: white;
+          height: 66px;
+          width: 66px;
+          border: 1px solid #BBB7B3;
+        }
+        textarea#post_content {
+          width: 426px;
+          height: 49px;
+          resize: none;
+          padding: 10px;
+          font-family: inherit;
+        }
 
+      }
     }
+
     div#posts {
       font-size: 20px;
       display: flex;
@@ -107,7 +111,7 @@ body {
           border: 1px solid #DFE0E4;
         }
         display: block;
-        margin-top: 50px;
+        margin-top: 10px;
         background-color: white;
         width: 500px;
         padding: 10px;
