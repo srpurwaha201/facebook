@@ -10,11 +10,13 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    byebug
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     respond_to do |format|
       if @post.save
-        format.js {   }
+        format.html{ return redirect_to '/'  }
+        # format.js {   }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render 'home/index' }
@@ -42,6 +44,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :content)
+      params.require(:post).permit(:user_id, :content, :image)
     end
 end
