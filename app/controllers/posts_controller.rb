@@ -26,6 +26,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post_id = @post.id
+    FileUtils.rm_rf(@post.image.path.split("original")[0])
     @post.destroy
     respond_to do |format|
       format.js{  }
