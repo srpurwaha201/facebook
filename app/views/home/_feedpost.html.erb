@@ -15,8 +15,13 @@
       </div>
     </section>
   </header>
-  <%= image_tag post.image.url %><br>
   <%= post.content %><br>
+  <% unless post.image.path.nil? %>
+  <div class="post_image">
+    <%= image_tag post.image.url %><br>
+  </div>
+  <% end %>
+
   <footer>
     <div class="actions" id="<%= post.id %>">
       <% if post.is_liked? current_user.id%>

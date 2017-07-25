@@ -78,7 +78,15 @@ body {
           display: flex;
           justify-content: space-between;
           background-color: white;
-          margin-bottom: 40px;
+          margin-bottom: 10px;
+        }
+        div.post_image{
+        display: flex;
+        justify-content: center;
+          img{
+                width: 500px;
+              }
+        margin-top: 20px;
         }
 
         footer {

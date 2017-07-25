@@ -2,7 +2,9 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
   validates :content, presence: true
-  has_attached_file :image
+  has_attached_file :image, :url => '/assets/images/post/:id/:style/:basename.:extension',
+                        :path => ':rails_root/public/assets/images/post/:id/:style/:basename.:extension', :dependent => :destroy
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def likes_count
