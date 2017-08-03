@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post 'likes/toggle_like'
 
   resources :comments, only: [:create, :destroy]
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: [:create, :destroy, :edit, :update]
   get 'home/index'
 
   root 'home#index'

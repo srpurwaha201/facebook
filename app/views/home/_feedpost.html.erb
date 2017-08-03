@@ -15,7 +15,9 @@
       </div>
     </section>
   </header>
-  <%= post.content %><br>
+  <div class="content" id="<%= post.id %>">
+    <%= post.content %>
+  </div>
   <% unless post.image.path.nil? %>
   <div class="post_image">
     <%= image_tag post.image.url %><br>
@@ -34,6 +36,7 @@
 
       <span class="post_likes_count" id="<%= post.id%>"><%= post.likes_count %></span>
       <%= link_to 'Delete', post, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_post_path(post.id), remote: true%>
     </div>
     <div class="comments_info" id="<%= post.id %>">
       <%= post.comments.count%>
