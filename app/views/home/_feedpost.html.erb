@@ -35,8 +35,8 @@
       <% end %>
 
       <span class="post_likes_count" id="<%= post.id%>"><%= post.likes_count %></span>
-      <%= link_to 'Delete', post, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
       <%= link_to 'Edit', edit_post_path(post.id), remote: true%>
+      <%= link_to 'Delete', post, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
     </div>
     <div class="comments_info" id="<%= post.id %>">
       <%= post.comments.count%>

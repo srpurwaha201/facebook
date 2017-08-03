@@ -6,7 +6,7 @@
     <span class="user_email">
       <%= comment.user.full_name %>
     </span>
-    <span class="content">
+    <span class="content" id="<%=comment.id%>">
       <%= comment.content %>
     </span>
     <footer class="comment_footer">
@@ -19,6 +19,7 @@
           <i class="fa fa-thumbs-o-up fa-2x comment_like_button", id="<%= comment.id %>"aria-hidden="true"></i>
         <% end %>
         <span class="comment_likes_count" id="<%= comment.id%>"><%= comment.likes_count %></span>
+        <%= link_to 'Edit', edit_comment_path(comment.id), remote: true%>
         <%= link_to 'Delete', comment, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
       </span>
       <span class="time">
