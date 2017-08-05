@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :authorize_user]
   before_action :authorize_user, only: [:update, :destroy]
   # GET /posts
   # GET /posts.json
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
     end
 
     def authorize_user
-      if current_user!= self.user
+      if current_user!= @post.user
         return redirect_to '/'
       end
     end

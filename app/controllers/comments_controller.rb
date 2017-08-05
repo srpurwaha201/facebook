@@ -83,6 +83,7 @@ class CommentsController < ApplicationController
     end
 
     def authorize_user
+      byebug
       if current_user!= self.user
         return redirect_to '/'
       end
