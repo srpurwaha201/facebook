@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy, :authorize_user]
   before_action :authorize_user, only: [:update, :destroy]
   # GET /comments
   # GET /comments.json
@@ -83,8 +83,7 @@ class CommentsController < ApplicationController
     end
 
     def authorize_user
-      byebug
-      if current_user!= self.user
+      if current_user!= @comment.user
         return redirect_to '/'
       end
     end
