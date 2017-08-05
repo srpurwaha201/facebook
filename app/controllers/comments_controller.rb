@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize_user, only: [:update, :destroy]
   # GET /comments
   # GET /comments.json
   def index
@@ -80,5 +80,11 @@ class CommentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
       params.require(:comment).permit(:content, :user_id, :post_id)
+    end
+
+    def authorize_user
+      if current_user!= self.user
+        return redirect_to '/'
+      end
     end
 end

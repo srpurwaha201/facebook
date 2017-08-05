@@ -19,8 +19,10 @@
           <i class="fa fa-thumbs-o-up fa-2x comment_like_button", id="<%= comment.id %>"aria-hidden="true"></i>
         <% end %>
         <span class="comment_likes_count" id="<%= comment.id%>"><%= comment.likes_count %></span>
-        <%= link_to 'Edit', edit_comment_path(comment.id), remote: true%>
-        <%= link_to 'Delete', comment, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
+        <% if current_user == comment.user %>
+          <%= link_to 'Edit', edit_comment_path(comment.id), remote: true%>
+          <%= link_to 'Delete', comment, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </span>
       <span class="time">
         <%=time_ago_in_words(comment.created_at)%> ago
