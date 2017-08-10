@@ -1,0 +1,6 @@
+<% @feed.each do |post| %>
+$('#posts').append("<%= escape_javascript (render 'home/feedpost', post: post) %>");
+<% end %>
+
+window.offset = <%= @new_offset%>;
+window.load_more_active = false;

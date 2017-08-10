@@ -2,8 +2,26 @@ class HomeController < ApplicationController
 
   before_action :authenticate_user!
   def index
-    @post = Post.new
-    @comment = Comment.new
+    respond_to do |format|
+      format.html{
+        @feed = current_user.feed.take(10)
+        @post = Post.new
+        @comment = Comment.new
+      }
+      format.js{
+        offset = params["offset"]
+        if offset
+          offset = offset.to_i
+        else
+          offset = 0
+        end
+
+        @new_offset = offset + 10
+        @feed = current_user.feed.drop(offset).take(10)
+        @comment = Comment.new
+      }
+    end
+
   end
 
   def users
