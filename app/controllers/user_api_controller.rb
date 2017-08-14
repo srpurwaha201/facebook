@@ -14,8 +14,7 @@ class UserApiController < ActionController::API
   def sign_up
     user = User.new
     user.email = params["email"]
-    decrypt_password = params["password"]
-    user.password = User.new(:password => decrypt_password).encrypted_password
+    user.password = params["password"]
     user.first_name = params["first_name"]
     user.last_name = params["last_name"]
     user.created_at = Time.now
