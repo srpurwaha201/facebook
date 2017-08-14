@@ -10,4 +10,24 @@ class UserApiController < ActionController::API
     end
     render json: data
   end
+
+  def sign_up
+    user = User.new
+    user.email = params["email"]
+    decrypt_password = params["password"]
+    user.password = User.new(:password => decrypt_password).encrypted_password
+    user.first_name = params["first_name"]
+    user.last_name = params["last_name"]
+    user.created_at = Time.now
+    user.updated_at = Time.now
+    user.id = User.last.id + 1
+    data = {}
+    if user.save
+      data["message"] = "user created"
+      data["user"] = user
+    else
+      data["message"] = "user not created"
+    end
+    render json: data
+  end
 end
