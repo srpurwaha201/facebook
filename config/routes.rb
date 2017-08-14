@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   post 'posts_api/create'
   post 'comments_api/create'
+  post 'user_api/sign_in'
 
   post 'posts_api/delete'
 

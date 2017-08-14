@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725151954) do
+ActiveRecord::Schema.define(version: 20170814124912) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20170725151954) do
     t.text     "content"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "image"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -83,6 +82,7 @@ ActiveRecord::Schema.define(version: 20170725151954) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthday"
+    t.string   "access_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

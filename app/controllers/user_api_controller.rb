@@ -1,5 +1,5 @@
 class UserApiController < ActionController::API
-  
+
   def feed
     user_id = params["user_id"]
     data = {}
@@ -29,5 +29,24 @@ class UserApiController < ActionController::API
       data["message"] = "user not created"
     end
     render json: data
+  end
+
+  def sign_in
+    data = {}
+    user = User.find_by_email(params[:email])
+    if user
+      if user.valid_password?(params[:password])
+        user.access_token = SecureRandom.hex()
+        data["message"] = "signed id"
+        data["user"] = user
+      else
+        data["message"] = "invalid password"
+      end
+    else
+      data["message"] = "invalid email"
+    end
+
+    render json: data
+
   end
 end
