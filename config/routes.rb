@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'user_api/feed'
 
   post 'posts_api/create'
+  post 'comments_api/create'
 
   post 'posts_api/delete'
 
