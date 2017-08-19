@@ -12,7 +12,7 @@ class Comment < ActiveRecord::Base
   end
 
   def send_new_comment_mail
-    CommentMailer.send_comment_mail(id).deliver_now
+    Resque.enqueue(CommentMailerWorker, id)
   end
 
 end
