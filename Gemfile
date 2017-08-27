@@ -54,3 +54,7 @@ gem 'remotipart', '~> 1.2'
 gem 'rails-api'
 
 gem 'resque'
+
+gem 'rails4-autocomplete'
+
+gem 'jquery-ui-rails'

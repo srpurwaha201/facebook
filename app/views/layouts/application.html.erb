@@ -11,6 +11,9 @@
     <% if current_user %>
     <header id="panel">
       <a href="/"><img src="/logo.png" , id="logo"></a>
+      <%= form_tag("/", method: "get") do %>
+          <%= autocomplete_field_tag 'first_name', '', autocomplete_user_first_name_application_index_url, :size => 75 %>
+      <% end %>
       <section id="user_pannel">
         <div class="profile_picture">
           <img src=<%=current_user.profile_pic_path %>>
