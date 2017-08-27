@@ -6,15 +6,15 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, through: :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
-  before_save :capitalize_names
+  before_save :capitalize_names, :initialise_full_name
 
   def capitalize_names
     self.first_name = first_name.camelcase
     self.last_name = last_name.camelcase
   end
 
-  def full_name
-    self.first_name + " " + self.last_name
+  def initialise_full_name
+    self.full_name = self.first_name + " " + self.last_name
   end
   def isFriendable? currentuserid
     currentuserid != self.id

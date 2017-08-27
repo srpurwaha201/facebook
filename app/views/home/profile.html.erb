@@ -1,6 +1,6 @@
 <div id="profile">
   <img src=<%=current_user.profile_pic_path %>>
-
+  <%= current_user.full_name %>
   <%= form_tag url_for(controller: :home, action: :upload_image), multipart: true do %>
 
   <%= file_field_tag :image %>

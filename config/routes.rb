@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :application do
-  get :autocomplete_user_first_name, :on => :collection
+  get :autocomplete_user_full_name, :on => :collection
   end
   post 'likes/toggle_like'
 
