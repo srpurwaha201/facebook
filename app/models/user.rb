@@ -8,14 +8,10 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   before_save :capitalize_names, :initialise_full_name
 
-  def capitalize_names
-    self.first_name = first_name.camelcase
-    self.last_name = last_name.camelcase
+  def to_param
+    permalink
   end
 
-  def initialise_full_name
-    self.full_name = self.first_name + " " + self.last_name
-  end
   def isFriendable? currentuserid
     currentuserid != self.id
   end
@@ -63,5 +59,20 @@ class User < ActiveRecord::Base
 
   def requests
     FriendRequest.where(reciever_id: self.id)
+  end
+
+  private
+
+  def capitalize_names
+    self.first_name = first_name.camelcase
+    self.last_name = last_name.camelcase
+  end
+
+  def initialise_full_name
+    self.full_name = self.first_name + " " + self.last_name
+  end
+
+  def create_permalink
+    self.permalink = self.email.split("@")[0] + user.id.to_s
   end
 end

@@ -35,7 +35,7 @@ class UserController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]);
+    @user = User.find_by_permalink(params[:id])
   end
   # def isFriend(friend_id)
   #   return (Friend.where(friend1_id: friend_id, friend2_id: current_user.id).count + Friend.where(friend1_id: current_user.id, friend2_id: friend_id).count) > 0
