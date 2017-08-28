@@ -153,10 +153,16 @@ body {
 		display: none;
 	}
 	ul.ui-menu{
+		li{
+			margin-top: 2px;
+			// background-color: yellow;
+			font-weight: bolder;
+			padding: 10px;
+		}
+		border: 1px solid #C6C8CB;
 		cursor: pointer;
 		list-style: none;
-		background-color: red;
-		padding: 10px;
+		background-color: white;
 		width: 10px;
 	}
 	header#panel {
