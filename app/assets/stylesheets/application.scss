@@ -178,6 +178,8 @@ body {
 		form{
 			width: 373.85px;
 			input#full_name{
+				position: relative;
+				right: 25%;
 				display: block;
 				width: inherit;
 				border: 1px solid grey;
