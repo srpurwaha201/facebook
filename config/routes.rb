@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   post 'likes/toggle_like'
 
+  resources :users, only: [:show]
   resources :comments, only: [:create, :destroy, :edit, :update]
   resources :posts, only: [:create, :destroy, :edit, :update]
   get 'home/index'
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
   post 'posts_api/delete'
 
   post 'user_api/sign_up'
+
+  get 'user/profile'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   # The priority is based upon order of creation: first created -> highest priority.

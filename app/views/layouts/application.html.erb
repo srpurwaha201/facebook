@@ -12,7 +12,7 @@
     <header id="panel">
       <a href="/"><img src="/logo.png" , id="logo"></a>
       <%= form_tag("/", method: "get") do %>
-          <%= autocomplete_field_tag 'first_name', '', autocomplete_user_full_name_application_index_url, :size => 75 %>
+          <%= autocomplete_field_tag 'full_name', '', autocomplete_user_full_name_application_index_url, :size => 75 %>
       <% end %>
       <section id="user_pannel">
         <div class="profile_picture">

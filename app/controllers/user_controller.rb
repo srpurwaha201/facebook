@@ -33,6 +33,11 @@ class UserController < ApplicationController
     end
     return redirect_to '/friends'
   end
+
+  def profile
+    full_name = params["full_name"]
+    @user = User.where(full_name: full_name)[0]
+  end
   # def isFriend(friend_id)
   #   return (Friend.where(friend1_id: friend_id, friend2_id: current_user.id).count + Friend.where(friend1_id: current_user.id, friend2_id: friend_id).count) > 0
   # end

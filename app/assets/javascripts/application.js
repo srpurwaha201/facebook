@@ -17,3 +17,17 @@
 //= require jquery.remotipart
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  console.log("loaded!");
+  $(document).on("click", "ul.ui-menu.ui-autocomplete", function(){
+    var full_name = $("input#full_name").val();
+      console.log(full_name);
+      $.ajax({
+        type: "GET",
+        url: "/user/profile",
+        data:{
+          full_name: full_name
+        }
+      });
+  });
+});
