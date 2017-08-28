@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, through: :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
-  before_save :capitalize_names, :initialise_full_name
+  before_save :capitalize_names, :initialise_full_name, :create_permalink
 
   def to_param
     permalink
@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
     FriendRequest.where(reciever_id: self.id)
   end
 
-  private
+  # private
 
   def capitalize_names
     self.first_name = first_name.camelcase
@@ -73,6 +73,6 @@ class User < ActiveRecord::Base
   end
 
   def create_permalink
-    self.permalink = self.email.split("@")[0] + user.id.to_s
+    self.permalink = self.email.split("@")[0] + self.id.to_s
   end
 end
