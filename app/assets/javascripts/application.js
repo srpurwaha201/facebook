@@ -24,7 +24,7 @@ $(document).ready(function(){
       console.log(full_name);
       $.ajax({
         type: "GET",
-        url: "/user/profile",
+        url: user_path,
         data:{
           full_name: full_name
         }
