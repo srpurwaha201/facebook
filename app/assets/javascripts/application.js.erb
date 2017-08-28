@@ -18,16 +18,23 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
+  $('#full_name').bind('railsAutocomplete.select', function(event, data){
+    window.location = "http://localhost:3000/user/"+data.item.permalink
+    // $.ajax({
+    //
+    //   url: 'user#show',
+    //   type: 'get',
+    //   data: {
+    //     id: data.item.id,
+    //     format: 'html'
+    //   }
+    // });
+          // window.location.href = '/user/' + data.item.permalink;
+  });
+
   console.log("loaded!");
   $(document).on("click", "ul.ui-menu.ui-autocomplete", function(){
     var full_name = $("input#full_name").val();
       console.log(full_name);
-      $.ajax({
-        type: "GET",
-        url: user_path,
-        data:{
-          full_name: full_name
-        }
-      });
   });
 });
