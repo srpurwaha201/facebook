@@ -35,6 +35,8 @@ class UserController < ApplicationController
   end
 
   def show
+    @post = Post.new
+    @comment = Comment.new
     @user = User.find_by_permalink(params[:id])
   end
   # def isFriend(friend_id)
