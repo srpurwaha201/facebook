@@ -4,7 +4,7 @@ class UserController < ApplicationController
     request.sender_id = current_user.id
     request.reciever_id = params[:reciever_id]
     request.save
-    return redirect_to '/users'
+    return redirect_to :back
   end
 
   def acceptRequest

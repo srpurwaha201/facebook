@@ -9,15 +9,36 @@ div#profile_page {
 
   div#user_header {
     width: 835px;
+    height: 300px;
     box-sizing: border-box;
-    padding: 50px;
     background-color: white;
     margin-bottom: 15px;
-
+    div#intro{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: 240px;
+      left: 190px;
+      width: 600px;
+      padding-left: 10px;
+      padding-right: 10px;
+      span#actions{
+      }
+    }
     div#user_image {
+      position: relative;
+      top: 100px;
+      left: 20px;
+      border: 1px solid #B2B2B2;
+      height: 155px;
+      width: 155px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
       img {
-        height: 13%;
-        width: 13%;
+        height: 150px;
+        width: 150px;
       }
     }
   }
