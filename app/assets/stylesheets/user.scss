@@ -8,6 +8,7 @@ div#profile_page {
   align-items: center;
 
   div#user_header {
+    border: 1px solid #DFE0E4;
     width: 835px;
     height: 300px;
     box-sizing: border-box;
@@ -49,8 +50,17 @@ div#profile_page {
     display: flex;
     justify-content: space-around;
     section#left{
+      div{
+        background-color: white;
+        border: 1px solid #DFE0E4;
+        margin-bottom: 10px;
+      }
+      div#user_bio{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
       width: 300px;
-      background-color: white;
     }
     section#right{
       div.post {
