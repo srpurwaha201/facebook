@@ -35,6 +35,7 @@ div#profile_page {
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 0;
       border-radius: 3px;
       img {
         height: 150px;

@@ -169,6 +169,7 @@ body {
 		width: 10px;
 	}
 	header#panel {
+		z-index: 100;
 		font-weight: bolder;
 		position: fixed;
 		top: 0;
