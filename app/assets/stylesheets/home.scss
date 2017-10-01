@@ -68,6 +68,7 @@ body {
               flex-direction: column;
               justify-content: space-between;
               div.user_name {
+                white-space: nowrap;
                 font-weight: bold;
                 font-size: 15px;
               }

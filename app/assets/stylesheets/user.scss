@@ -63,6 +63,16 @@ div#profile_page {
       width: 300px;
     }
     section#right{
+      div#user_new_post{
+        textarea#post_content{
+          font-family: inherit;
+          padding: 10px;
+          box-sizing: border-box;
+          width: 522px;
+          resize: none;
+          height: 120px;
+        }
+      }
       div.post {
         header {
           section.left {
