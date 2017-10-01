@@ -11,7 +11,12 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.text_area :content, placeholder: 'Hi ' + user_name + ". Write something about " + @user.first_name + "."%>
+    <% if @user == current_user %>
+      <% message = "Hi " + user_name + ". Tell your friends about your day." %>
+    <% else %>
+      <% message = 'Hi ' + user_name + ". Write something about " + @user.first_name + "." %>
+    <% end %>
+    <%= f.text_area :content, placeholder: message%>
   </div>
   <%= f.hidden_field :ref_user_id, value: @user.id %>
   <%= f.hidden_field :user_id, value: current_user.id %>

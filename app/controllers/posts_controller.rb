@@ -31,6 +31,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    if @post.ref_user == @post.user
+      @post.ref_user = nil
+    end
     respond_to do |format|
       if @post.save
         # format.html{ return redirect_to '/'  }
