@@ -34,9 +34,11 @@
     <div id="user_new_post">
       <%= render 'user/postform', post: @post, user_name: current_user.first_name %>
     </div>
+    <div id="posts">
     <% @user.wall.each do |post|%>
     <%= render 'home/feedpost', post: post%>
     <% end %>
+  </div>
   </section>
   </div>
 </div>
