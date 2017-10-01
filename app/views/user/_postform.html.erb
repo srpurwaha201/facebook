@@ -1,0 +1,23 @@
+<%= form_for post ,:html => { :multipart => true }, :remote => true do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: 'Hi ' + user_name + ". Write something about " + @user.first_name + "."%>
+  </div>
+  <%= f.hidden_field :ref_user_id, value: @user.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= f.file_field :image%>
+    <%= f.submit %>
+  </div>
+<% end %>

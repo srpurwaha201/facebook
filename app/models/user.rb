@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :comments, through: :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   before_save :capitalize_names, :initialise_full_name, :create_permalink
-
   def to_param
     permalink
   end
@@ -42,6 +41,20 @@ class User < ActiveRecord::Base
     feed = feed.sort_by { |obj| obj.updated_at }
     feed.reverse!
     return feed
+  end
+
+  def wall
+      wall = self.posts
+      self.friends.each do |friend|
+        friend.posts.each do |post|
+          if id == post.ref_user_id
+            wall = wall + Array.new(1){post}
+          end
+        end
+      end
+      wall = wall.sort_by { |obj| obj.updated_at }
+      wall.reverse!
+      return wall
   end
 
   def friends

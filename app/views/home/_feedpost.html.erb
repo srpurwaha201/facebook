@@ -6,7 +6,11 @@
       </div>
       <div class="post_details">
         <div class="user_name">
-          <%= post.user.full_name %>
+          <%= link_to post.user.full_name, url_for(action: 'show', controller: 'user', id: post.user.permalink) %>
+          <% unless post.ref_user.nil?%>
+            <i class="fa fa-caret-right" aria-hidden="true"></i>
+            <%= link_to post.ref_user.full_name, url_for(action: 'show', controller: 'user', id: post.ref_user.permalink) %>
+          <% end %>
         </div>
         <div class="time">
           <%= time_ago_in_words(post.created_at) %>

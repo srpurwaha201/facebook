@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, class_name: 'User'
+  belongs_to :ref_user, class_name: 'User'
   has_many :comments, dependent: :destroy
   validates :content, presence: true
   has_attached_file :image, :url => '/assets/images/post/:id/:style/:basename.:extension',
