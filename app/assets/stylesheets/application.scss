@@ -75,12 +75,14 @@ div#devise_sign_in {
 		// box-shadow: 0 0 10px grey;
 	}
 	div#login_content{
-		padding: 40px;
+		padding: 60px;
+		margin-left: 5%;
+		margin-right: 10%;
 		display: flex;
 		justify-content: space-around;
 		section#left{
-			position: relative;
-			left: 70px;
+			//position: relative;
+			//left: 70px;
 			div#login_text{
 				line-height: 30px;
 				color: #0E385F;
@@ -90,8 +92,8 @@ div#devise_sign_in {
 			width:500px;
 		}
 		section#right{
-			position: relative;
-			right:100px;
+			//position: relative;
+			//right:100px;
 			div#new_form_heading{
 				font-size: 40px;
 				font-weight: bolder;
@@ -183,7 +185,7 @@ body {
 			width: 373.85px;
 			input#full_name{
 				position: relative;
-				right: 25%;
+				right: 10%;
 				display: block;
 				width: inherit;
 				border: 1px solid grey;
