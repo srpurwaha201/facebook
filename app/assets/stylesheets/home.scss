@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     align-items: center;
     form.new_post{
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       div.field {
         img{
           background-color: white;
@@ -31,11 +31,12 @@ body {
           font-family: inherit;
         }
       }
-      // div.actions{
+      div.actions{
+        display: none;
       //   input#post_image{
       //     display: none;
       //   }
-      // }
+      }
     }
 
     div#posts {

@@ -1,3 +1,4 @@
 <% @comment = Comment.new %>
 $('#posts').prepend("<%= escape_javascript (render 'home/feedpost', post: @post) %>");
 $('#post_content').val("");
+$("form#new_post.new_post div.actions").css("display", "none");
