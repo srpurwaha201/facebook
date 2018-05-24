@@ -157,24 +157,26 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on("focusin","form#new_post.new_post", function(){
-    if (!$("textarea#post_content").val()) {
-      $("form#new_post.new_post div.actions").css("display", "unset");
-    // textarea is empty
-  }
+  //edit this section to hide/unhide add new image bar
 
-    //$("div.actions").css("display", "show");
-    console.log("fin triggered!");
-  })
-
-  $(document).on("focusout","form#new_post.new_post", function(){
-    if (!$("textarea#post_content").val()) {
-      $("form#new_post.new_post div.actions").css("display", "none");
-    // textarea is empty
-  }
-    //$("div.actions").toggle();
-    console.log("f out triggered!");
-  })
+  // $(document).on("focusin","form#new_post.new_post", function(){
+  //   // if (!$("textarea#post_content").val()) {
+  //     $("form#new_post.new_post div.actions").css("display", "unset");
+  //   // textarea is empty
+  // // }
+  //
+  //   //$("div.actions").css("display", "show");
+  //   console.log("fin triggered!");
+  // })
+  //
+  // $(document).on("focusout","form#new_post.new_post", function(){
+  //   // if (!$("textarea#post_content").val()) {
+  //     $("form#new_post.new_post div.actions").css("display", "none");
+  //   // textarea is empty
+  // // }
+  //   //$("div.actions").toggle();
+  //   console.log("f out triggered!");
+  // })
 
 
 })
